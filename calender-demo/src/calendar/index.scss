@@ -3,29 +3,10 @@
 }
 
 .calendar-header {
-  &-left {
-    display: flex;
-    align-items: center;
-
-    height: 28px;
-    line-height: 28px;
-  }
-
-  &-value {
-    font-size: 20px;
-  }
-
-  &-btn {
-    background: #eee;
-    cursor: pointer;
-    border: 0;
-    padding: 0 15px;
-    line-height: 28px;
-
-    &:hover {
-      background: #ccc;
-    }
-  }
+  display: flex;
+  align-items: center;
+  height: 28px;
+  line-height: 28px;
 
   &-icon {
     width: 28px;
@@ -44,6 +25,22 @@
     &:not(:first-child) {
       margin: 0 12px;
     }
+
+    &:hover {
+      background: #ccc;
+    }
+  }
+
+  &-value {
+    font-size: 20px;
+  }
+
+  &-btn {
+    background: #eee;
+    cursor: pointer;
+    border: 0;
+    padding: 0 15px;
+    line-height: 28px;
 
     &:hover {
       background: #ccc;

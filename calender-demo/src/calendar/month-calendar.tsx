@@ -6,7 +6,7 @@ import { useContext } from 'react';
 import LocaleContext from './locale-context';
 import allLocales from './locale';
 
-function getAllDays(date: Dayjs) {
+export function getAllDays(date: Dayjs) {
   const startDate = date.startOf('month');
   const day = startDate.day();
 
@@ -19,12 +19,15 @@ function getAllDays(date: Dayjs) {
     };
   }
 
-  for (let i = 0; i < daysInfo.length; i++) {
+  const len = daysInfo.length;
+
+  for (let i = 0; i < len; i++) {
     const calcDate = startDate.add(i - day, 'day');
     daysInfo[i + day] = {
       date: calcDate,
       currentMonth: calcDate.month() === date.month()
     };
+    console.log('🚀 ~ getAllDays ~ daysInfo:', daysInfo);
   }
 
   return daysInfo;
@@ -36,6 +39,8 @@ interface MonthCalendarProps extends CalendarProps {
 }
 
 export const MonthCalendar = (props: MonthCalendarProps) => {
+  console.log('MonthCalendar');
+
   const localeContext = useContext(LocaleContext);
 
   const { value, curMonth, dateRender, dateInnerContent, selectHandler } = props;
@@ -45,6 +50,7 @@ export const MonthCalendar = (props: MonthCalendarProps) => {
   const weekList = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
 
   const days = getAllDays(curMonth);
+  console.log('🚀 ~ MonthCalendar ~ days:', days);
 
   function renderDays(days: Array<{ date: Dayjs; currentMonth: boolean }>) {
     const rows = [];

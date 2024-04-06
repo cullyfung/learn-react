@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <Calendar
-        value={dayjs('2023-11-08')}
+        value={dayjs('2024/04/06')}
         dateRender={(value) => {
           return (
             <div>

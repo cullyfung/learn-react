@@ -18,27 +18,25 @@ export const Header = (props: HeaderProps) => {
 
   return (
     <div className="calendar-header">
-      <div className="calender-header-left">
-        <div
-          className="calendar-header-left-icon"
-          onClick={prevMonthHandler}
-        >
-          &lt;
-        </div>
-        <div className="calender-header-value">{curMonth.format(CalendarContext.formatMonth)}</div>
-        <div
-          className="calendar-header-left-icon"
-          onClick={nextMonthHandler}
-        >
-          &gt;
-        </div>
-        <button
-          className="calendar-header-btn"
-          onClick={todayHandler}
-        >
-          {CalendarContext.today}
-        </button>
+      <div
+        className="calendar-header-icon"
+        onClick={prevMonthHandler}
+      >
+        &lt;
       </div>
+      <div className="calender-header-value">{curMonth.format(CalendarContext.formatMonth)}</div>
+      <div
+        className="calendar-header-icon"
+        onClick={nextMonthHandler}
+      >
+        &gt;
+      </div>
+      <button
+        className="calendar-header-btn"
+        onClick={todayHandler}
+      >
+        {CalendarContext.today}
+      </button>
     </div>
   );
 };
