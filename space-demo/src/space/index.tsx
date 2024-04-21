@@ -17,7 +17,7 @@ export interface SpaceProps extends React.HTMLAttributes<HTMLDivElement> {
 
 const spaceSize = {
   small: 8,
-  middle: 16,
+  medium: 16,
   large: 24
 };
 
